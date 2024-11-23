@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cronômetro - Routiner</title>
+  <link rel="icon" href="img/rouiner -ampulheta.png">
+  
+
+  <!-- Fontes do Google e ícones do Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Botão de Voltar -->
+    <button class="btn-back" onclick="window.history.back()">
+      <i class="fas fa-arrow-left"></i> Voltar
+    </button>
+
+    <header>
+      <img class="logo-ampulheta"  src="img.logo/rouiner -ampulheta.png" alt="" srcset="">
+      <h1>Cronômetro</h1>
+      <p>Monitore suas atividades com precisão</p>
+    </header>
+
+    <!-- Seção de Cronômetro -->
+    <section class="activity-monitor">
+      <div class="activity-input">
+        <input type="text" id="activity" placeholder="Digite a atividade..." aria-label="Nome da atividade">
+        <button class="btn-primary" onclick="startTimer()">
+          <i class="fas fa-play"></i> Iniciar
+        </button>
+        <button class="btn-secondary" onclick="saveActivity()">
+          <i class="fas fa-save"></i> Salvar
+        </button>
+      </div>
+
+      <div class="timer">
+        <h2 id="time-display" aria-live="polite">00:00:00</h2>
+        <button class="btn-secondary" onclick="pauseTimer()">
+          <i class="fas fa-pause"></i> Pausar
+        </button>
+        <button class="btn-secondary" onclick="resetTimer()">
+          <i class="fas fa-redo"></i> Zerar
+        </button>
+      </div>
+    </section>
+
+    <!-- Histórico de Atividades -->
+    <section class="history">
+      <h3>Histórico de Atividades</h3>
+      <ul id="history-list" aria-live="polite"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

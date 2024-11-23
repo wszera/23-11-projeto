@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Definindo o charset para UTF-8 e o viewport para dispositivos móveis -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competição Social - Desafios de Consistência</title>
+    <link rel="icon" href="img/rouiner -ampulheta.png">
+    <!-- Link para o arquivo de estilos (CSS) -->
+    <link rel="stylesheet" href="desaf.css">
+    
+    <!-- Inclusão da biblioteca SweetAlert para notificações -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Ícone da página (favicon) -->
+    <link rel="icon" href="assets/favicon.ico">
+</head>
+
+<body>
+    <div class="container">
+        
+        <!-- Cabeçalho da página -->
+        <header>
+            <h1>Competição Social</h1>
+            <img class="logo-ampulheta" src="img/rouiner -logo2.png" alt="">
+            <p>Desafios, Recompensas e Competição Saudável!</p>
+        </header>
+
+        <!-- Botão de Voltar -->
+<button onclick="goBack()" class="btn voltar-btn">Voltar</button>
+
+
+        <!-- Seção para criar um novo desafio -->
+        <section id="challengeSection" class="section">
+            <h2>Crie um Desafio</h2>
+            <form id="challengeForm" aria-labelledby="challengeSection">
+                <div class="input-group">
+                    <label for="challengeName">Nome do Desafio:</label>
+                    <input type="text" id="challengeName" placeholder="Ex: 30 Dias de Leitura" required>
+                </div>
+                <div class="input-group">
+                    <label for="challengeDays">Quantos Dias?</label>
+                    <input type="number" id="challengeDays" min="1" required placeholder="Ex: 30">
+                </div>
+                <div class="input-group">
+                    <label for="challengeType">Tipo de Desafio:</label>
+                    <select id="challengeType" required>
+                        <option value="">Selecione um tipo...</option>
+                        <option value="Saúde">Saúde</option>
+                        <option value="Lazer">Lazer</option>
+                        <option value="Trabalho">Trabalho</option>
+                        <option value="Estudo">Estudo</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Criar Desafio</button>
+            </form>
+            <div id="challengesList"></div>
+        </section>
+
+        <!-- Seção de recompensas -->
+        <section id="rewardsSection" class="section">
+            <h2>Recompensas</h2>
+            <div id="rewardsList"></div>
+        </section>
+
+        <!-- Seção do quadro de líderes -->
+        <section id="leaderboardSection" class="section">
+            <h2>Quadro de Líderes</h2>
+            <table id="leaderboard">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <th>Pontos</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <!-- Seção para compartilhar o código de convite -->
+        <section id="inviteSection" class="section">
+            <h2>Compartilhar Código de Convite</h2>
+            <div>
+                <p>Compartilhe seu código para convidar amigos:</p>
+                <input type="text" id="inviteCode" readonly value="12345ABCF">
+                <button id="inviteButton">Copiar Código</button>
+            </div>
+        </section>
+
+        <!-- Seção para adicionar amigo usando o código de convite -->
+        <section id="friendSection" class="section">
+            <h2>Adicionar Amigo</h2>
+            <div>
+                <label for="inviteCodeInput">Insira o código de convite do amigo:</label>
+                <input type="text" id="inviteCodeInput" placeholder="Código do Amigo">
+                <button id="addFriendButton">Adicionar Amigo</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Inclusão do script JavaScript -->
+    <script src="desaf.js"></script>
+</body>
+
+</html>

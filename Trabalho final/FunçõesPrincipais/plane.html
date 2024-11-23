@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routiner - Planejamento Diário e Monitor de Atividades</title>
+  <link rel="icon" href="img/rouiner -ampulheta.png">
+  <link rel="stylesheet" href="style.css">
+  <!-- Adicionando a biblioteca FileSaver.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Routiner</h1>
+      <p>Planejamento diário e acompanhamento de atividades</p>
+
+      <!-- Botão para salvar os dados em um arquivo JSON -->
+<button id="save-btn">Salvar Dados</button>
+
+      <!-- Botão de Voltar -->
+      <button onclick="window.history.back()" id="back-btn">Voltar</button>
+    </header>
+
+
+    <!-- Seção de Sequência de Atividades -->
+    <section id="streak-section">
+      <h2>Sequência de Atividades</h2>
+      <div id="streak-bar-container">
+        <div id="streak-bar"></div>
+      </div>
+      <p id="streak-count">Sequência: 0 dias</p>
+    </section>
+
+    <!-- Formulário de Tarefas -->
+    <section id="task-form">
+      <input type="text" id="task-input" placeholder="Nova tarefa...">
+      <select id="tag-select">
+        <option value="saude">Saúde</option>
+        <option value="estudo">Estudo</option>
+        <option value="lazer">Lazer</option>
+        <option value="trabalho">Trabalho</option>
+        <option value="outros">Outros</option>
+      </select>
+      <button id="add-task-btn">Adicionar Tarefa</button>
+    </section>
+
+    <!-- Listas de Tarefas -->
+    <section id="task-lists">
+      <div class="category" id="saude-category">
+        <h3>Saúde</h3>
+        <ul id="task-list-saude" class="task-category-list"></ul>
+      </div>
+      <div class="category" id="estudo-category">
+        <h3>Estudo</h3>
+        <ul id="task-list-estudo" class="task-category-list"></ul>
+      </div>
+      <div class="category" id="lazer-category">
+        <h3>Lazer</h3>
+        <ul id="task-list-lazer" class="task-category-list"></ul>
+      </div>
+      <div class="category" id="trabalho-category">
+        <h3>Trabalho</h3>
+        <ul id="task-list-trabalho" class="task-category-list"></ul>
+      </div>
+      <div class="category" id="outros-category">
+        <h3>Outros</h3>
+        <ul id="task-list-outros" class="task-category-list"></ul>
+      </div>
+    </section>
+
+    <!-- Botão de Finalizar o Dia -->
+    <button id="finish-day-btn">Finalizar Dia</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
